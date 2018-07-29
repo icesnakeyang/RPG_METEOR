@@ -1,0 +1,18 @@
+<template name="dashboard">
+    <div class="container">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Longitude</th>
+                <th>latitude</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each gpsList}}
+                {{> locationRow}}
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

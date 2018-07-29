@@ -1,0 +1,19 @@
+<template name="taskLogPanelTpl">
+    <div class="container">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <span class="pull-left">{{userInfo.fullName}}</span>
+                    </div>
+                    <div class="col-xs-6">
+                        <span class="pull-right">{{createdTime}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <textarea id="txtLog" class="form-control" rows="5" readonly>{{content}}</textarea>
+            </div>
+        </div>
+    </div>
+</template>

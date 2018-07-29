@@ -1,0 +1,17 @@
+<template name="subTaskPagePanelTpl">
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            {{#if completed}}
+                <span class="label label-success">Completed</span>
+            {{/if}}
+            <a id="taskDetail" href="">{{task.title}}</a>
+        </div>
+        <div class="panel-body">
+            <p class="text-muted">Created by: {{userInfo.fullName}}</p>
+            <p class="text-muted">Created time: {{createdTime}}</p>
+            <textarea class="form-control" rows="5" readonly>{{task.content}}</textarea>
+            <p class="text-muted">Days: {{task.days}}</p>
+            <p class="text-muted">Sub tasks: {{subTasks}}</p>
+        </div>
+    </div>
+</template>

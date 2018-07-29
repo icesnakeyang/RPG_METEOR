@@ -1,0 +1,25 @@
+<template name="jobLogsTpl">
+    <div class="container">
+        <div class="well well-sm text-muted">
+            {{_ "task.publish.logs.pageInfo2"}}
+        </div>
+
+        <!--menu-->
+        <div class="form-group">
+            <ul class="nav nav-pills" role="tablist">
+                <li>
+                    <a id="btNewLog" href="">{{_ "task.publish.logs.newButton"}}</a>
+                </li>
+
+                <li>
+                    <a id="btLog" href="">{{_ "task.publish.logs.totalLogs"}}({{totalLog}})</a>
+                </li>
+            </ul>
+        </div>
+
+        <!--log list-->
+        {{#each logs}}
+            {{> jobLogsRowTpl}}
+        {{/each}}
+    </div>
+</template>

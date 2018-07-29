@@ -1,0 +1,19 @@
+<template name="taskLogPageTpl">
+    <div class="container">
+        <div class="well well-sm text-muted">
+            {{_ "task.logs.pageInfo"}}
+        </div>
+
+        <!--Menu-->
+        <div class="form-group">
+            <div class="btn-group">
+                <a id="btNewLog" href="" class="btn btn-primary btn-sm">{{_ "task.logs.newLog"}}</a>
+            </div>
+        </div>
+
+    </div>
+
+    {{#each taskLogs}}
+        {{> taskLogPanelTpl}}
+    {{/each}}
+</template>

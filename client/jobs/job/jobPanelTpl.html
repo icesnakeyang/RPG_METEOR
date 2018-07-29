@@ -1,0 +1,75 @@
+<template name="jobPanelTpl">
+    <div class="panel panel-success">
+        <div class="panel-heading">{{this.title}}</div>
+        <div class="panel-body">
+            <p class="text-muted">{{_ "task.task.taskCode"}}: {{this.codeName}}</p>
+            <p class="text-muted">{{_ "task.task.partyA"}}: {{this.partyA.userInfo.fullName}}</p>
+            <p class="text-muted">{{_ "task.task.partyB"}}: {{userB.userInfo.fullName}}</p>
+            <p class="text-muted">{{_ "task.task.publishedTime"}}: {{publishedTime}}</p>
+            <p class="text-muted">{{_ "task.task.contractedTime"}}: {{contractedTime}}</p>
+            <p class="text-muted">{{_ "task.task.reward"}}: {{this.reward}}</p>
+            <p class="text-muted">{{_ "task.task.status.status"}}:
+                {{#if isPending}}
+                    <span class="label label-warning">
+                        {{_ "task.task.status.matching"}}
+                    </span>
+                    &nbsp;
+                {{/if}}
+                {{#if isComplete}}
+                    <span class="label label-success">
+                        {{_ "task.task.status.complete"}}
+                    </span>
+                    &nbsp;
+                {{/if}}
+                {{#if isAccept}}
+                    <span class="label label-primary">
+                        {{_ "task.task.status.accepted"}}
+                    </span>
+                    &nbsp;
+                {{/if}}
+                {{#if isProgress}}
+                    <span class="label label-info">
+                        {{_ "task.task.status.progress"}}
+                    </span>
+                    &nbsp;
+                {{/if}}
+            </p>
+            <p class="text-muted">{{_ "task.task.daysAfterContract"}}:
+                {{passedDays}}
+            </p>
+            <p class="text-muted">{{_ "task.task.days"}}:
+                {{this.days}}
+            </p>
+            <p class="text-muted">{{_ "task.task.daysLeft"}}:
+                {{leftDays}}
+            </p>
+            {{#if actualFinishDays}}
+                <p class="text-muted">{{_ "task.task.daysFinished"}}:
+                    {{actualFinishDays}}
+                </p>
+            {{/if}}
+            <div class="gogoBox">
+                <div id="summer_content"></div>
+            </div>
+        </div>
+        {{#if isPending}}
+            <div class="panel-footer">
+                <div class="form-group">
+                    <button id="bt_agree" class="btn btn-block btn-success">
+                        {{_ "task.match.agreeButton"}}
+                    </button>
+                </div>
+                <div class="form-group">
+                    {{#if isReject}}
+                        {{> rejectTpl}}
+                    {{/if}}
+                    <button id="bt_reject" class="btn btn-block btn-danger">
+                        {{_ "task.match.rejectButton"}}
+                    </button>
+                </div>
+            </div>
+        {{/if}}
+    </div>
+
+    {{> rejectModalTpl}}
+</template>

@@ -1,0 +1,37 @@
+<template name="matchLogRowTpl">
+    <div class="panel panel-info">
+        <div class="panel-body">
+            <div class="text-muted">
+                {{_ "task.match.matchTo"}}：{{partyB.userInfo.fullName}}
+            </div>
+            <div class="text-muted">
+                <div>{{_ "task.match.matchTime"}}：{{matchTime}}</div>
+            </div>
+            <div class="text-muted">
+                <div>{{_ "task.match.readTime"}}：
+                    {{#if readTime}}
+                    {{readTime}}
+                    {{else}}
+                    <span class="label label-warning">{{_ "task.task.unread"}}</span>
+                    {{/if}}
+                </div>
+                {{#if processTime}}
+                <div>{{_ "task.match.processResult"}}：
+                    {{#if processResult}}
+                    <span class="label label-success">{{_ "task.task.status.accepted"}}</span>
+                    {{else}}
+                    <span class="label label-danger">{{_ "task.task.status.rejected"}}</span>
+                    {{/if}}
+                </div>
+                <div>{{_ "task.match.processTime"}}：{{processTime}}</div>
+                {{/if}}
+            </div>
+            {{#if processRemark}}
+            <div class="text-muted">
+                <div>{{_ "task.match.rejectContent"}}</div>
+                <textarea style="width: 100%;" value="{{processRemark}}"></textarea>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</template>

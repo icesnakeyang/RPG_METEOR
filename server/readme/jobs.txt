@@ -1,0 +1,75 @@
+Jobs：MongoDB的集合，用于存储用户所有的外包任务，以及与外包任务相关的数据。
+
+数据格式：
+
+job={
+
+    //创建时生成的数据
+    _id:(String) 任务Id，保存时由MongoDB自动生成
+    codeName:(String)项目代号，用户输入
+    taskId: (String)    最初的私有任务Id
+    title:(String) 任务标题，用户输入
+    days:(Number)任务工作量（天），用户输入
+    reward:(Number)任务佣金，用户输入
+    content：(String)任务内容，用户输入
+    createdUserId:(String)创建任务的用户Id
+    createdTime:(DateTime)发布时间，保存时的服务器时间,
+    partyAId：(String)甲方用户Id
+
+    //乙方接受任务时生成的数据
+    match:(true/false) 是否已经匹配成功，即已经成交。
+    matchId：(String)匹配成功的匹配日志Id,
+    partyBId：(String)匹配成功的用户Id，即乙方用户Id
+    contractTime:   签约时间，即乙方同意任务，匹配成功的时间
+    progress:true/false 任务正在进行中
+
+    //任务分配过期：任务如果7天后没有分配成功，则为分配过期matchOverDue状态
+    matchOverdue:true
+    readOverdueTime:    甲方用户读取任务过期的时间，用于提醒甲方用户任务已经过期了
+    //该状态在JobsMatch设置过期时自动设置，无人工操作。
+    //RPG秘书登录后，系统自动对所有的未分配任务进行时间校验，凡过期任务都增加此键值
+    //过期任务不再RPG秘书的分配表里显示，但RPG秘书可以通过任务ID、title来查找
+    //查找到的任务仍然可以进行分配。分配后，系统删除该键值
+
+    //乙方提交完成时生成的数据
+    complete:true/false 任务完成 以乙方提交完成开始
+
+    //验收成功生成的数据
+    accept:true/false   任务已验收
+
+    //双方同意终止时生成的数据
+    stop:true/false     任务已经终止
+
+    //提交申诉时生成的数据
+    appeal:true/false   任务是否在申诉中，提交申诉后为true，撤诉成功为false
+
+    //状态信息，service层读取记录时动态计算
+    passDays:       任务已经进行的天数， 按签约时间到今天计算
+    leftDays:       任务剩余天数  任务预定工作量days-passDays
+    finishDays:     任务实际的完成天数
+
+}
+
+功能：创建新的外包任务//////////////////////////////////////////////////////////////////////////////
+
+参数：
+job={
+    codeName:项目代号 String,
+    title:任务标题 String,
+    days:任务工作量（天） Number，
+    reward:任务佣金 Number,
+    content：任务内容 String，
+    partyAId：创建任务的用户ID String，
+    publishedTime：发布时间 DateTime 创建时的服务器时间
+}
+
+功能：修改私有任务//////////////////////////////////////////////////////////////////////////////
+
+参数：
+task={
+    taskId:任务Id String 创建时由Mongodb自动生成的_id值，
+    title:任务标题 String,
+    days:任务工作量（天） Number，
+    content：任务内容 String，
+    updatedUserId：修改任务的用户ID String
+}

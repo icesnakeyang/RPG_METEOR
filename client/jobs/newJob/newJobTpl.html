@@ -1,0 +1,11 @@
+<template name="newJobTpl">
+    <div class="container">
+        {{#if task}}
+            {{> newJobPanelTpl task}}
+        {{else}}
+            <div class="alert alert-danger">
+                <h3>{{_ "task.publish.newPublish.pageInfo2"}}</h3>
+            </div>
+        {{/if}}
+    </div>
+</template>

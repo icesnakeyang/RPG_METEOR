@@ -1,0 +1,22 @@
+<template name="jobMatchDetailTpl">
+    <div class="container">
+        <div class="well well-sm text-muted">
+            Process the match job
+        </div>
+
+        <!--menus-->
+        <div class="form-group">
+            <ul class="nav nav-pills" role="tablist">
+                <li><a id="btContract" href="">Contract to</a></li>
+            </ul>
+        </div>
+
+        <!--显示分配日志-->
+        {{#each matchLogs}}
+            {{> jobMatchLogTpl}}
+        {{/each}}
+
+        <!--published task info-->
+        {{> jobMatchDetailPanelTpl theJob}}
+    </div>
+</template>

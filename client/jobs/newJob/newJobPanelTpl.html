@@ -1,0 +1,47 @@
+<template name="newJobPanelTpl">
+    <div class="well well-sm text-warning">
+        {{_ "task.publish.newPublish.pageInfo"}}
+    </div>
+    <div class="form-group">
+        <label>{{_ "task.task.taskName"}}</label>
+        <input class="form-control"
+               value="{{this.title}}"
+               id="title">
+    </div>
+
+    <div class="form-group">
+        <label>{{_ "task.task.taskCode"}}</label>
+        <input class="form-control"
+               value="{{this.task.codeName}}"
+               id="codeName">
+    </div>
+
+    <div class="form-group">
+        <label>{{_ "task.task.taskDetail"}}</label>
+        <div id="summer_content" class="summernote"></div>
+    </div>
+
+    <div class="form-group">
+        <label>{{_ "task.task.days"}}</label>
+        <input class="form-control"
+               value="{{this.days}}"
+               id="days">
+    </div>
+
+    <div class="form-group">
+        <label>
+            {{_ "task.task.reward"}}
+            <span class="text-muted"
+                  style="font-size: 12px;font-style: italic;color:red">
+                        ({{_ "task.publish.newPublish.balance"}}:{{balance}})
+                    </span>
+        </label>
+        <input class="form-control"
+               value="{{this.reward}}"
+               id="reward">
+    </div>
+
+    <button id="btPublish" class="btn btn-primary btn-block">
+        {{_ "task.publish.newPublish.publishButton"}}
+    </button>
+</template>

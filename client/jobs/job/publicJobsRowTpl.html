@@ -1,0 +1,13 @@
+<template name="publicJobsRowTpl">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <a id="click_Title" href="">{{title}}</a>
+        </div>
+        <div class="panel-body">
+            <p class="text-muted">{{_ "task.task.publisher"}}: {{partyA.userInfo.fullName}}</p>
+            <p class="text-muted">{{_ "task.task.publishedTime"}}: {{publishTime}}</p>
+            <p class="text-muted">{{_ "task.task.reward"}}: ${{reward}}</p>
+            <p class="text-muted">{{_ "task.task.days"}}: {{days}} days</p>
+        </div>
+    </div>
+</template>

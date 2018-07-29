@@ -1,0 +1,19 @@
+<template name="newAppealTpl">
+    <div class="container">
+        <div class="alert alert-danger">
+            <b>{{_ "common.caution"}}</b>:{{_ "task.appeal.pageInfoNew"}}
+        </div>
+
+        <div class="form-group">
+            <label>{{_ "task.appeal.title"}}</label>
+            <input id="txtTitle" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>{{_ "task.appeal.appealContent"}}</label>
+            <div id="txtContent" class="summernote"></div>
+        </div>
+
+        <button id="btSubmit" class="btn btn-danger btn-block">{{_ "task.appeal.submit"}}</button>
+    </div>
+</template>

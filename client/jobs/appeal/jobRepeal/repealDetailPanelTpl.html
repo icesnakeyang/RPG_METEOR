@@ -1,0 +1,39 @@
+<template name="repealDetailPanelTpl">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            {{this.title}}
+        </div>
+        <div class="panel-body">
+            <p class="text-muted">
+                {{_ "task.task.createdBy"}}: {{createdUser.userInfo.fullName}}
+            </p>
+            <p class="text-muted">
+                {{_ "task.task.createdTime"}}: {{createdTime}}
+            </p>
+            <p class="text-muted">
+                {{_ "task.task.readTime"}}: {{readTime}}
+            </p>
+            <div class="gogoTextBox">
+                <p class="text-muted" id="content"></p>
+            </div>
+            {{#if this.processTime}}
+                <p class="text-muted">
+                    process result: {{this.processResult}}
+                </p>
+                <textarea class="form-control" readonly>{{this.processRemark}}</textarea>
+            {{/if}}
+        </div>
+
+        {{#if isProcess}}
+            <div class="panel-footer">
+                <div class="form-group">
+                    <textarea id="txtProcessRemark" class="form-control" rows="5"
+                              placeholder="Process remark"></textarea>
+                </div>
+
+                <button id="btAgree" class="btn btn-success">{{_ "task.appeal.btAgree"}}</button>
+                <button id="btReject" class="btn btn-danger">{{_ "task.appeal.btReject"}}</button>
+            </div>
+        {{/if}}
+    </div>
+</template>

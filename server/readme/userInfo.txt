@@ -1,0 +1,13 @@
+UserInfo
+
+userInfo:{
+    _id
+    userId
+    fullName
+    email
+    createdTime
+    createdUserId
+
+    disable: true / false 已经失效
+    disableTime
+}

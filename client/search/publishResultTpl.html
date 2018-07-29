@@ -1,0 +1,18 @@
+<template name="searchResultTpl">
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>{{_ "task.task.taskCode"}}</th>
+                <th>{{_ "task.task.taskName"}}</th>
+                <th>{{_ "searchResult.action"}}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each jobs}}
+                {{> resultRowTpl}}
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

@@ -1,0 +1,13 @@
+<template name="newJobCompleteAcceptTpl">
+    <div class="container">
+        <div class="alert alert-danger" role="alert">
+            {{_ "task.complete.pageInfoAccept"}}
+        </div>
+
+        <div class="form-group">
+            <label>{{_ "task.complete.description"}}</label>
+            <textarea id="txtDesc" class="form-control" rows="10"></textarea>
+        </div>
+        <button id="bt_Accept" class="btn btn-primary btn-block">{{_ "task.complete.submitButton"}}</button>
+    </div>
+</template>

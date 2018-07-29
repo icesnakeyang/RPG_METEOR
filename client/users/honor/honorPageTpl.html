@@ -1,0 +1,54 @@
+<template name="honorPageTpl">
+    <div class="container">
+        <div class="well well-sm text-muted">
+            {{_ "myHonor.pageInfo"}}
+            <p></p>
+            {{_ "myHonor.pageInfo2"}}
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        {{_ "myHonor.reward"}}
+                    </div>
+                    <div class="panel-body">
+                        {{totalHonor.income}}</div>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        {{_ "myHonor.penalty"}}
+                    </div>
+                    <div class="panel-body">
+                        {{totalHonor.out}}</div>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        {{_ "myHonor.balance"}}
+                    </div>
+                    <div class="panel-body">
+                        {{totalHonor.balance}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>{{_ "myHonor.date"}}</th>
+                <th>{{_ "myHonor.point"}}</th>
+                <th>{{_ "myHonor.mark"}}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each honorLogs}}
+                {{> honorLogRowTpl}}
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

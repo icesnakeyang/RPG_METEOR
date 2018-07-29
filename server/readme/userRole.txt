@@ -1,0 +1,17 @@
+UserRole
+用户权限集合
+
+userRole={
+    _id
+    userId
+    administrator:true/false
+    secretary:true/false
+    createdTime
+    createdUserId
+
+    disabledTime     取消时间
+    disabledUserId:data.createdUserId
+
+}
+
+取消时，将administrator、secretary设为false

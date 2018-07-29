@@ -1,0 +1,25 @@
+<template name="adminMatchLogsTpl">
+    <div class="container">
+        <div class="well well-sm text-muted">
+            Job Match Logs
+        </div>
+        <div class="form-group">
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th style="width: 30%">{{_ "admin.matchLogs.title"}}</th>
+                    <th>{{_ "admin.matchLogs.publishDate"}}</th>
+                    <th>{{_ "admin.matchLogs.amount"}}</th>
+                    <th>{{_ "admin.matchLogs.overDate"}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each matchJobs}}
+                    {{> adminMatchLogRowTpl}}
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</template>

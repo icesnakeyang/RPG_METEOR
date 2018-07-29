@@ -1,0 +1,19 @@
+<template name="accountPageTpl">
+    <div class="container">
+        <div> user accounts</div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td>User Name</td>
+                <td>Balance</td>
+                <td>Detail</td>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each users}}
+                {{> accountPageRowTpl}}
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

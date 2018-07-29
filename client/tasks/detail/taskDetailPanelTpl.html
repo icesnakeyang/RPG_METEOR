@@ -1,0 +1,43 @@
+<template name="taskDetailPanelTpl">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                {{this.title}}
+            </h3>
+        </div>
+        <div class="panel-body">
+            {{#if this.pid}}
+                <div class="pull-right"><p><a id="linkParent" href="">{{_ "task.detail.parent"}}</a></p></div>
+            {{/if}}
+            <p class="text-muted">{{_ "task.task.createdBy"}}: {{this.createdUser.userInfo.fullName}}</p>
+            <p class="text-muted">{{_ "task.task.createdTime"}}: {{createdTime}}</p>
+            <p class="text-muted">{{_ "task.task.status.status"}}:&nbsp;
+                {{#if this.complete}}
+                    <label class="label label-success">
+                        {{_ "task.task.status.complete"}}
+                    </label>
+                {{else}}
+                    <label class="label label-info">
+                        {{_ "task.task.status.progress"}}
+                    </label>
+                {{/if}}
+                &nbsp;
+                {{#if taskStatus.contract}}
+                    <label class="label label-danger">
+                        {{_ "task.task.status.contracted"}}
+                    </label>
+                {{/if}}
+                {{#if taskStatus.pending}}
+                    <label class="label label-warning">
+                        {{_ "task.task.status.pending"}}
+                    </label>
+                {{/if}}
+            </p>
+            <div class="form-group">
+                <label>{{_ "task.appeal.appealContent"}}</label>
+                <div id="content" class="summernote gogoBox"></div>
+            </div>
+            <p class="text-muted">{{_ "task.task.days"}}: {{this.days}}</p>
+        </div>
+    </div>
+</template>

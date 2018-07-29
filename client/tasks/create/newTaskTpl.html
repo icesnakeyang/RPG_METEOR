@@ -1,0 +1,25 @@
+<template name="newTaskTpl">
+	<div class="container">
+		<div class="well well-sm text-muted">
+			{{_ "task.create.pageInfo"}}
+		</div>
+		<form class="form-newtask">
+			<div class="form-group">
+				<label>{{_ "task.task.taskName"}}</label>
+				<input id="newtask_title" class="form-control">
+			</div>
+
+			<div class="form-group">
+				<label>{{_ "task.task.taskDetail"}}</label>
+				<textarea id="newtask_content" class="form-control" rows="8"></textarea>
+			</div>
+
+			<div class="form-group">
+				<label>{{_ "task.task.days"}}</label>
+				<input id="newtask_days" class="form-control" value=7>
+			</div>
+
+			<button id="bt_save" class="btn btn-primary btn-block">{{_ "task.create.createButton"}}</button>
+		</form>
+	</div>
+</template>

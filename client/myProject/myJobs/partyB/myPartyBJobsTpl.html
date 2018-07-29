@@ -1,0 +1,93 @@
+<template name="myPartyBJobsTpl">
+    <div class="container">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-2">
+                    <a id="bt_progress" href="">
+                        {{#if isProgress}}
+                        <div class="label label-info">
+                            {{_ "task.task.status.progress"}}
+                            ({{totalProgress}})
+                        </div>
+                        {{else}}
+                        {{_ "task.task.status.progress"}}
+                        ({{totalProgress}})
+                        {{#if newProgress}}
+                        <span class="badge gogoBadge">{{newProgress}}</span>
+                        {{/if}}
+                        {{/if}}
+                    </a>
+                </div>
+                <div class="col-xs-2">
+                    <a id="bt_completed" href="">
+                        {{#if isComplete}}
+                        <div class="label label-success">
+                            {{_ "task.task.status.complete"}}
+                            ({{totalComplete}})
+                        </div>
+                        {{else}}
+                        {{_ "task.task.status.complete"}}
+                        ({{totalComplete}})
+                        {{#if newComplete}}
+                        <span class="badge gogoBadge">{{newComplete}}</span>
+                        {{/if}}
+                        {{/if}}
+                    </a>
+                </div>
+                <div class="col-xs-2">
+                    <a id="bt_accept" href="">
+                        {{#if isAccept}}
+                        <div class="label label-primary">
+                            {{_ "task.task.status.acceptance"}}
+                            ({{totalAccept}})
+                        </div>
+                        {{else}}
+                        {{_ "task.task.status.acceptance"}}
+                        ({{totalAccept}})
+                        {{#if newAccept}}
+                        <span class="badge gogoBadge">{{newAccept}}</span>
+                        {{/if}}
+                        {{/if}}
+                    </a>
+                </div>
+                <div class="col-xs-2">
+                    <a id="bt_stop" href="">
+                        {{#if isStop}}
+                        <div class="label label-danger">
+                            {{_ "task.task.status.stop"}}
+                            ({{totalStop}})
+                        </div>
+                        {{else}}
+                        {{_ "task.task.status.stop"}}
+                        ({{totalStop}})
+                        {{#if newStop}}
+                        <span class="badge gogoBadge">
+                                    {{newStop}}
+                                </span>
+                        {{/if}}
+                        {{/if}}
+                    </a>
+                </div>
+                <div class="col-xs-2">
+                    <a id="bt_match" href="">
+                        {{#if isMatch}}
+                        <div class="label label-warning">
+                            {{_ "task.task.status.matching"}}
+                            ({{totalMatch}})
+                        </div>
+                        {{else}}
+                        {{_ "task.task.status.matching"}}
+                        ({{totalMatch}})
+                        {{/if}}
+                        {{#if newMatch}}
+                        <span class="badge gogoBadge2">{{newMatch}}</span>
+                        {{/if}}
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{#each jobs}}
+        {{> myPartyBJobsRowTpl}}
+        {{/each}}
+    </div>
+</template>

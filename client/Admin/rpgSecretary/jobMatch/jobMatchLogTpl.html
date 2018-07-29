@@ -1,0 +1,34 @@
+<template name="jobMatchLogTpl">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            {{_ "task.match.matchLogs"}}
+        </div>
+        <div class="panel-body">
+            <div class="well well-sm text-muted">
+                <div>{{_ "task.match.matchTo"}}：{{user.userInfo.fullName}}</div>
+                <div>{{_ "task.match.matchTime"}}：{{matchTime}}</div>
+                <div>{{_ "task.match.readTime"}}：
+                    {{#if readTime}}
+                    {{readTime}}
+                    {{else}}
+                    <span class="label label-warning">{{_ "task.task.unread"}}</span>
+                    {{/if}}
+                </div>
+                {{#if processTime}}
+                <div>{{_ "task.match.processResult"}}：
+                    {{#if processResult}}
+                    <span class="label label-success">{{_ "task.task.status.accepted"}}</span>
+                    {{else}}
+                    <span class="label label-danger">{{_ "task.task.status.rejected"}}</span>
+                    {{/if}}
+                </div>
+                <div>{{_ "task.match.processTime"}}：{{processTime}}</div>
+                {{#if processRemark}}
+                <div>{{_ "task.match.rejectContent"}}</div>
+                <textarea value="{{processRemark}}" style="width: 100%;"></textarea>
+                {{/if}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</template>

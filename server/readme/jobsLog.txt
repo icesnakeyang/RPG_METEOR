@@ -1,0 +1,13 @@
+JobsLog：MongoDB的集合，用于存储用户所有的外包任务甲乙双方的沟通日志
+
+数据格式：
+
+JobsLog={
+    _id:            (String)    jobsLogId，保存时由MongoDB自动生成,
+    jobId:          (String)    外包任务的Id
+    createdTime:    (DateTime)  日志的创建时间
+    createdUserId：  (String)    创建日志的用户Id
+    content：        (String)    日志内容
+    readTime：       (DateTime)  对方阅读时间
+    readUserId:                 阅读用户Id
+}

@@ -1,0 +1,60 @@
+<template name="tabTpl">
+    <div class="form-group">
+        {{init}}
+        <ul class="nav nav-pills">
+            {{#if activeTask}}
+            <li class="active">
+                <a id="myTask" href="">
+                    {{_ "task.menu.createdByMe"}}
+                </a>
+            </li>
+            {{else}}
+            <li>
+                <a id="myTask" href="">
+                    {{_ "task.menu.createdByMe"}}
+                </a>
+            </li>
+            {{/if}}
+
+            {{#if activePartyA}}
+            <li class="active">
+                <a id="myPartyA" href="">
+                    {{_ "task.menu.partyA"}}
+                    {{#if myNewCountA}}
+                    <span class="badge gogoBadge">{{myNewCountA}}</span>
+                    {{/if}}
+                </a>
+            </li>
+            {{else}}
+            <li>
+                <a id="myPartyA" href="">
+                    {{_ "task.menu.partyA"}}
+                    {{#if myNewCountA}}
+                    <span class="badge gogoBadge">{{myNewCountA}}</span>
+                    {{/if}}
+                </a>
+            </li>
+            {{/if}}
+
+            {{#if activePartyB}}
+            <li class="active">
+                <a id="myPartyB" href="">
+                    {{_ "task.menu.partyB"}}
+                    {{#if myNewCountB}}
+                    <span class="badge gogoBadge">{{myNewCountB}}</span>
+                    {{/if}}
+                </a>
+            </li>
+            {{else}}
+            <li>
+                <a id="myPartyB" href="">
+                    {{_ "task.menu.partyB"}}
+                    {{#if myNewCountB}}
+                    <span class="badge gogoBadge">{{myNewCountB}}</span>
+                    {{/if}}
+                </a>
+            </li>
+            {{/if}}
+        </ul>
+    </div>
+</template>

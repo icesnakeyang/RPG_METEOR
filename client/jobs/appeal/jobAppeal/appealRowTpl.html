@@ -1,0 +1,14 @@
+<template name="appealRowTpl">
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            {{#if newRepeal}}
+                <span class="badge gogoBadge">{{newRepeal}}</span>
+            {{/if}}
+            <a id="linkTitle" href="">{{title}}</a>
+        </div>
+        <div class="panel-body">
+            <p class="text-muted">{{_ "task.task.createdBy"}}: {{createUser.userInfo.fullName}}</p>
+            <p class="text-muted">{{_ "task.task.createdTime"}}: {{createdTime}}</p>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,40 @@
+<template name="repealRowTpl">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            {{#if newRepeal}}
+                <span class="badge gogoBadge">{{newRepeal}}</span>
+            {{/if}}
+            <a id="linkTitle" href="">{{title}}</a>
+        </div>
+        <div class="panel-body">
+            <p class="text-muted">
+                {{_ "task.task.createdBy"}}: {{createUser.userInfo.fullName}}
+            </p>
+            <p class="text-muted">
+                {{_ "task.task.createdTime"}}: {{createdTime}}
+            </p>
+            <p class="text-muted">
+                {{_ "task.task.readTime"}}: {{readTime}}
+            </p>
+            {{#if result}}
+                <p class="text-muted">
+                    {{#if result.rejected}}
+                        {{_ "task.appeal.processResult"}}:
+                        <span class="label label-warning">{{_ "task.appeal.repealReject"}}</span>
+                    {{/if}}
+                    {{#if result.repealed}}
+                        {{_ "task.appeal.processResult"}}:
+                        <span class="label label-success">{{_ "task.appeal.repealAgreed"}}</span>
+                    {{/if}}
+                    {{#if result.unProcess}}
+                        {{_ "task.appeal.processResult"}}:
+                        <span class="label label-info">{{_ "task.appeal.unProcess"}}</span>
+                    {{/if}}
+                </p>
+                <p class="text-muted">
+                    {{_ "task.appeal.processTime"}}: {{processTime}}
+                </p>
+            {{/if}}
+        </div>
+    </div>
+</template>

@@ -1,0 +1,24 @@
+<template name="jobLogsRowTpl">
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            <sapn class="text-muted">{{createUser.userInfo.fullName}}</sapn>
+        </div>
+
+        <div class="panel-body">
+            <p class="text-muted">{{_ "task.task.createdTime"}}: {{time1}}</p>
+            <p class="text-muted">{{_ "task.task.readTime"}}:
+                {{#if readTime}}
+                    {{readTime}}
+                {{else}}
+                    <label class="label label-danger">{{_ "task.task.unread"}}</label>
+                {{/if}}
+            </p>
+            <!--<div id="summer_content"></div>-->
+            <textarea
+                    style="background-color: white"
+                    class="form-control"
+                    rows="5"
+                    readonly>{{content}}</textarea>
+        </div>
+    </div>
+</template>

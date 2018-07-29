@@ -1,0 +1,49 @@
+JobsComplete
+简单说，JobsComplete是一个验收日志。
+乙方完成任务后发起验收，填写验收说明，提交给甲方。
+甲方可以同意，或者拒绝，并说明理由。
+如果甲方发起验收则任务直接验收通过。
+
+数据格式：
+
+JobsComplete={
+    _id:            (String)    jobsCompleteId，保存时由MongoDB自动生成,
+    jobId:          (String)    外包任务的Id
+    createdTime:    (DateTime)  日志的创建时间
+    createdUserId：  (String)    创建日志的用户Id
+    remark:         (String)    验收说明
+    complete: true/false    创建时自动设置为true，甲方拒绝时改为false,
+    partyAId:               甲方的userId
+
+    readTime：       (DateTime)  对方阅读时间
+    readUserId：
+
+    processResult
+    processTime
+    processUserId
+    processRemark
+    processReadTime
+
+}
+
+1、乙方申请验收：
+    乙方可创建一个JobsComplete，把complete=true
+    创建后修改job为complete=true状态。
+2、甲方直接验收：
+    甲方创建JobsComplete，accept=true
+    在job增加accept=true状态。
+    增加UserHonor记录，把任务佣金添加到乙方的荣誉值上。
+3、甲方通过验收：
+    增加JobsComplete，accept=true
+    Jobs增加accept=true。
+    增加UserHonor记录，把任务佣金添加到乙方的荣誉值上。
+4、甲方拒绝验收：
+    查询所有没有处理的JobsComplete，增加processResult=false，processTime，processUserId， processRemark
+    修改job的complete=false
+
+实际上3个方法：
+1、createCompleteByPartyB
+2、acceptByPartyA
+3、rejectByPartyA
+
+

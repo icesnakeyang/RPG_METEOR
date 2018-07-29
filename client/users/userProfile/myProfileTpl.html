@@ -1,0 +1,41 @@
+<template name="myProfileTpl">
+    <div class="container">
+        <div class="well well-sm text-muted">
+            {{_ "myProfile.pageInfo"}}
+        </div>
+
+        <div class="form-group">
+            <ul class="nav nav-pills" role="tablist">
+                <li class="">
+                    <a id="bt_authPerson" href="">
+                        <span class="glyphicon glyphicon-user"> {{_ "myProfile.person"}}</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="bt_authEmail" href="">
+                        <span class="glyphicon glyphicon-envelope"> {{_ "myProfile.email"}}</span>
+
+                    </a>
+                </li>
+                <li>
+                    <a id="bt_authPhone" href="">
+                        <span class="glyphicon glyphicon-earphone"> {{_ "myProfile.phone"}}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="media">
+            <div class="media-left media-middle">
+                <a href="#">
+                    <img class="media-object gogoIcon64" src="Images/user.png" alt="...">
+                    <!--<label>User Info</label>-->
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">{{profile.userInfo.fullName}}</h4>
+                {{registerTime}}
+            </div>
+        </div>
+    </div>
+</template>

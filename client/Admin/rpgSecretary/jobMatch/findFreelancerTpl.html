@@ -1,0 +1,18 @@
+<template name="findFreelancerTpl">
+    <div class="container">
+        <div class="well well-sm text-muted">
+            Assign the task to freelancer
+        </div>
+
+        <div class="form-group">
+            <div class="input-group">
+                <input id="user_id" type="text" class="form-control" placeholder="Input user name"
+                       aria-describedby="basic-addon2">
+                <span class="input-group-addon" id="bt_search">Search</span>
+            </div>
+        </div>
+        {{#each wikis}}
+            {{> findFreelancerRowTpl}}
+        {{/each}}
+    </div>
+</template>

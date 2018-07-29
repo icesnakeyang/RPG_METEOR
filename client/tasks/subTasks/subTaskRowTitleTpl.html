@@ -1,0 +1,8 @@
+<template name="subTaskRowTitleTpl">
+    <a id="linkSubId" href="" class="list-group-item">
+        {{this.title}}
+        {{#if this.complete}}
+            <div class="label label-success">{{_ "task.task.status.complete"}}</div>
+        {{/if}}
+    </a>
+</template>

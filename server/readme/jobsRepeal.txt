@@ -1,0 +1,60 @@
+JobsRepeal
+甲方或者乙方用于可提交Repeal来撤销任务的申诉事件。
+1、当任务处于申诉状态时，任务详情页面会有repeal按钮。
+2、点击repeal进入到repeal页面。
+3、repeal页面显示了repeal日志的列表，里面包括甲乙双方提出的历次撤销申请。
+4、repeal页面顶部有操作模板，可进行create, approve操作。
+5、如果当前appeal未repeal=true，显示create按钮。
+6、如果当前有对方提交的repeal，且未处理，显示approve按钮。
+7、create和approve可以共同存在，即指，我可以不同意（不操作），但可以提出新的撤诉条件。
+8、甲乙双方都可以不停的创建repeal，爱建多少算多少。
+9、approve有同意agree，拒绝reject两个按钮。
+10、如果同意，指同意当前操作的repeal条件，设置processResult=true，
+    其他repeal不用管。
+    同时设置appeal.repeal=true
+    删除job的appeal键值
+    解冻甲方冻结的account
+
+11、如果拒绝，设置拒绝的repeal的processResult=false
+
+12、无论同意或者拒绝，都需要写一段话来对自己当前行为进行描述，说明理由。
+
+JobsRepeal:
+{
+    _id:自动编号
+    jobId:  任务编号
+    appealId:   申诉事件编号
+    createdUserId：  提出撤诉申请用户id
+    createdTime:    提出撤诉申请时间
+    content:        撤诉理由
+    processUserId:  处理方Id
+
+    readTime:       对方阅读时间
+
+    processResult: true/false   同意/拒绝   对方处理结果
+    processTime:    对方处理时间
+    processRemark:  对方处理理由
+
+    processReadTime: 创建方阅读处理结果的时间。
+}
+
+拒绝撤诉
+    processResult=false
+
+同意撤销
+    1、processResult=true
+
+    2、修改Appeal
+        repeal: true    撤销申诉时设置
+        repealTime:
+
+    3、job.appeal 删除
+
+    4、解冻甲方和乙方的account，在甲方和乙方的UserData上update
+    appeal{
+                block - job.reward  //申诉冻结job的reward
+                appealing --    // 每申诉一次，appealing +1，每撤销申诉 appealing -1
+            }
+
+    即使双方同意撤诉，系统也不会将申诉时扣除的荣誉值补回来。申诉便永远失去了任务的荣誉值，用户只能重新去挣回来。
+    永久的损失，会让用户慎重使用申诉，双方应尽最大努力解决纠纷。

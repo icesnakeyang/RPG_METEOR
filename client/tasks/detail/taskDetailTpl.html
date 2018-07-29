@@ -1,0 +1,64 @@
+<template name="taskDetailTpl">
+
+    <!--title bar-->
+    <div class="container">
+        <div class="well well-sm text-muted">
+            {{_ "task.detail.pageInfo"}}
+        </div>
+
+        <!--menus-->
+        <div class="form-group">
+            <ul class="nav nav-pills" role="tablist">
+                <li>
+                    <a id="bt_Update" href="">
+                        {{_ "task.detail.update"}}
+                    </a>
+                </li>
+
+                <li>
+                    <a id="btLog" href="">
+                        {{_ "task.detail.logs"}}
+                        ({{task.totalLogs}})
+                    </a>
+                </li>
+
+                <li>
+                    <a id="btSubTask" href="">
+                        {{_ "task.detail.subTasks"}}
+                        ({{task.totalSubTask}})
+                    </a>
+                </li>
+
+                <li>
+                    <a id="btFreelancer" href="">
+                        {{_ "task.detail.freelancer"}}
+                    </a>
+                </li>
+                {{#if task.complete}}
+                    <li>
+                        <a id="btUnComplete" href="#">
+                            {{_ "task.detail.uncomplete"}}
+                            <span class="badge gogoBadge"></span>
+                        </a>
+                    </li>
+                {{else}}
+                    <li>
+                        <a id="btComplete" href="#">
+                            {{_ "task.detail.complete"}}
+                            <span class="badge gogoBadge"></span>
+                        </a>
+                    </li>
+                {{/if}}
+
+                <li>
+                    <a id="btDelete" href="">
+                        {{_ "task.detail.delete"}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!--task info-->
+        {{> taskDetailPanelTpl task}}
+    </div>
+</template>

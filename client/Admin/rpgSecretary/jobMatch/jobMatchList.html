@@ -1,0 +1,11 @@
+<template name="jobMatchListTpl">
+    <div class="container">
+        <div class="well well-sm text-muted">
+            {{_ "task.match.pageInfo3"}}
+        </div>
+
+        {{#each jobs}}
+            {{> jobMatchRowTpl}}
+        {{/each}}
+    </div>
+</template>

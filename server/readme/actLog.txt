@@ -1,0 +1,13 @@
+ActLog
+记录用户在什么时候做了什么操作。
+比如，访问某个页面，执行某个方法，登录或者退出，等等。
+
+actLog:
+{
+    userId  执行操作的用户Id
+    action: 执行的操作
+    createdTime: 执行操作的时间
+}
+
+action的值包括：
+'check_my_task'：用户查看我的任务

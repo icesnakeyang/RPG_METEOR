@@ -1,0 +1,23 @@
+<template name="repealTpl">
+    <div class="container">
+        <div class="well well-sm text-muted">
+            {{_ "task.appeal.pageInfoRepeal"}}
+        </div>
+
+        <div class="form-group">
+            <ul class="nav nav-pills">
+                {{#if isNewRepeal}}
+                    <li>
+                        <a id="btNewRepeal" href="">
+                        {{_ "task.appeal.linkCreateRepeal"}}
+                        </a>
+                    </li>
+                {{/if}}
+            </ul>
+        </div>
+
+        {{#each repeals}}
+            {{> repealRowTpl}}
+        {{/each}}
+    </div>
+</template>

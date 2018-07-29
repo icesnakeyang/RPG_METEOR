@@ -1,0 +1,21 @@
+<template name="appealDetailTpl">
+    <div class="container">
+        <div class="form-group">
+            <ul class="nav nav-pills">
+                {{#if isParty}}
+                    <li>
+                        <a id="btRepeal" href="">
+                            {{_ "task.appeal.linkRepeal"}}
+                            ({{totalRepeal}})
+                            {{#if newRepeal}}
+                                <span class="badge gogoBadge">{{newRepeal}}</span>
+                            {{/if}}
+                        </a>
+                    </li>
+                {{/if}}
+            </ul>
+        </div>
+
+        {{> appealDetailPanelTpl appeal}}
+    </div>
+</template>

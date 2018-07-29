@@ -1,0 +1,12 @@
+<template name="realNamePageTpl">
+    <div class="container">
+        <div class="form-group">
+            <label>{{_ "myProfile.personal.fullName"}}</label>
+            <input id="fullName" class="form-control"
+                   value="{{userData.userInfo.fullName}}"
+                   placeholder='{{_ "myProfile.personal.inputFullNamePlaceholder"}}'>
+        </div>
+
+        <button id="bt_submit" class="btn btn-primary btn-block">{{_ "myProfile.personal.submitButton"}}</button>
+    </div>
+</template>

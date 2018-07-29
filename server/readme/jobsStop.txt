@@ -1,0 +1,39 @@
+JobsStop
+甲乙双方之间协商终止任务的日志记录。
+终止必须双方都同意。
+任意一方在任务进行过程中都可以提出终止，另一方同意后，任务即刻终止。
+双方可协商终止的赔偿金额，任务终止后，该金额退还给甲方。
+创建终止日志时，系统会检测当前是否还有未处理的日志，如果有，则直接修改原有日志，如果没有才会创建新的日志。
+目前修改日志可直接修改，将来加入修改历史日志。
+
+
+数据格式：
+
+JobsStop={
+    //创建时生成
+    _id:            (String)    jobsStopId，保存时由MongoDB自动生成,
+    jobId:          (String)    外包任务的Id
+    createdTime:    (DateTime)  日志的创建时间
+    createdUserId：  (String)    创建日志的用户Id
+    remark:         (String)    终止理由
+    refund:         (Number)    退还给甲方的任务金额
+    processUserId:              对方用户Id  根据任务，如果甲方创建，处理方为乙方，如果乙方创建，处理方为甲方。
+
+    readTime：       (DateTime)  对方阅读时间
+
+    processResult:  (boolean)    对方处理结果，true/false，同意/拒绝
+    processTime:    (DateTime)  对方处理时间
+    processRemark:  (String)    对方处理意见
+
+    processReadTime:    处理结果被对方查看时间
+}
+
+拒绝终止：
+    拒绝终止时，processResult=false
+    1、rejectStop(data.processUserId, data.processRemark, data.jobId);
+
+同意终止：
+    processResult=true
+    Job增加键值 stop=true, 删除complete，删除accept，删除progress
+    把refund退还给甲方。甲方UserCash增加refund，更新甲方UserData account
+    同时扣除乙方的refund。

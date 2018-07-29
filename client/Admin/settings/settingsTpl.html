@@ -1,0 +1,22 @@
+<template name="settingsTpl">
+    <div class="container">
+        <div class="well well-sm text-muted">
+            <div>{{_ "settings.page_info"}}</div>
+        </div>
+
+        <div class="panel panel-info">
+            <div class="panel-body">
+                <div class="form-group">
+                <label>{{_ "admin.settings.pendingDays"}}</label>
+                <input id="txtDays" class="form-control" value={{matchDays}}>
+                </div>
+                <div class="form-group">
+                    <button id="bt_saveMatchDays"
+                            class="btn btn-primary btn-block">
+                        {{_ "admin.settings.btPendingDays"}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

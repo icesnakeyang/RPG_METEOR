@@ -1,0 +1,46 @@
+<template name="myPartyBJobsRowTpl">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            {{#if newLogs}}
+            <span class="badge" style="background: #bd0000">{{newLogs}}</span>
+            {{/if}}
+            <a id="task_title" href="#">{{this.title}}</a>
+        </div>
+        <div class="panel-body">
+            <p class="text-muted">{{_ "task.task.partyA"}}: <span>{{partyA.userInfo.fullName}}</span></p>
+            <p class="text-muted">{{_ "task.task.partyB"}}: <span>{{partyB.userInfo.fullName}}</span></p>
+            <p class="text-muted">{{_ "task.task.contractedTime"}}: <span>{{contractTime}}</span></p>
+            <p class="text-muted">{{_ "task.task.status.status"}}:
+                {{#if this.accept}}
+                &nbsp;
+                <span class="label label-primary">
+                    {{_ "task.task.status.accepted"}}
+                </span>
+                {{else}}
+                {{#if this.complete}}
+                <span class="label label-success">
+                        {{_ "task.task.status.complete"}}
+                    </span>
+                {{else}}
+                {{#if this.stop}}
+                <span class="label label-danger">
+                    {{_ "task.task.status.canceled"}}
+                </span>
+                {{else}}
+                {{#if this.progress}}
+                <span class="label label-info">
+                    {{_ "task.task.status.progress"}}
+                </span>
+                {{else}}
+                <span class="label label-warning">
+                    {{_ "task.task.status.matching"}}
+                </span>
+                {{/if}}
+                {{/if}}
+                {{/if}}
+                {{/if}}
+            </p>
+            <p class="text-muted">{{_ "task.task.days"}}: <span>{{days}}</span></p>
+        </div>
+    </div>
+</template>

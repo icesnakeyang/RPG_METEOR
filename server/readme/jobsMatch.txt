@@ -1,0 +1,21 @@
+JobsMatch
+jobsMatch用来记录任务的分配记录
+
+jobsMatch={
+    _id
+    jobId
+    createdTime:    创建本次分配的时间
+    createdUserId：  创建的用户Id
+    content:        创建本次分配的说明，可能是系统预定义，RPG秘书人工输入，或者甲方预定义，AI自动生成等等。
+    matchUserId:    分配给的用户Id
+
+    readTime:   分配用户的阅读时间
+
+    processResult: true/false   同意/拒绝   分配用户处理结果。
+    processTime:    处理时间
+    processRemark:
+        拒绝理由说明：
+            1、SYSTEM_RELOCATION：如果一个任务已经分配给一个用户，当用户还未处理时，系统再次分配给该用户，系统会将原JobsMatch记录处理为该标志。
+            2、MATCH_OVERDUE：任务分配过期，如果用户在一个规定时间内未处理，则系统默认为过期。
+    processUserId:  操作处理用户Id
+}

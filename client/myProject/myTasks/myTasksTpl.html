@@ -1,0 +1,51 @@
+<template name="myTasksTpl">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-4">
+                <a id="bt_progress" href="">
+                    {{#if isComplete}}
+                    {{_ "task.task.status.progress"}}
+                    ({{totalProgressTask}})
+                    {{else}}
+                    <div class="label label-info">
+                        {{_ "task.task.status.progress"}}
+                        ({{totalProgressTask}})
+                    </div>
+                    {{/if}}
+                </a>
+            </div>
+            <div class="col-xs-4">
+                <a id="bt_completed" href="">
+                    {{#if isComplete}}
+                    <div class="label label-success">
+                        {{_ "task.task.status.complete"}}
+                        ({{totalCompleteTask}})
+                    </div>
+                    {{else}}
+                    {{_ "task.task.status.complete"}}
+                    ({{totalCompleteTask}})
+                    {{/if}}
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>{{_ "task.task.taskName"}}</th>
+            <th>{{_ "task.task.createdTime"}}</th>
+            <th>{{_ "task.task.days"}}</th>
+            <th>{{_ "task.task.elapsedDays"}}</th>
+            <th>{{_ "task.task.daysLeft"}}</th>
+            <th>{{_ "task.detail.subTasks"}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each myTasks}}
+        {{> myTaskRowTpl}}
+        {{/each}}
+        </tbody>
+    </table>
+
+</template>

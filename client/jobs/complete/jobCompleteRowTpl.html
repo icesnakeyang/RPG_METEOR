@@ -1,0 +1,45 @@
+<template name="jobCompleteRowTpl">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            {{createdUser.userInfo.fullName}}
+        </div>
+        <div class="panel-body">
+            <p class="text-muted">
+                {{_ "task.task.createdTime"}}: {{createdTime}}
+            </p>
+            <div class="gogoTextBox">{{remark}}</div>
+            <p class="text-muted">
+                {{_ "task.task.readTime"}}:
+                {{#if readTime}}
+                {{readTime}}
+                {{else}}
+            <div class="label label-danger">{{_ "task.task.unread"}}</div>
+            {{/if}}
+            </p>
+
+            <p class="text-muted">
+                {{_ "task.task.status.status"}}:
+                {{#unless isReject}}
+                {{#if this.accept}}
+            <div class="label label-primary">{{_ "task.task.status.acceptance"}}</div>
+            {{else}}
+            <div class="label label-success">{{_ "task.task.status.complete"}}</div>
+            {{/if}}
+            {{else}}
+            <div class="label label-warning">{{_ "task.task.status.rejected"}}</div>
+            {{/unless}}
+            </p>
+            {{#if processTime}}
+            <p class="text-muted">
+                {{_ "task.task.processTime"}}: {{processTime}}
+            </p>
+            <div class="gogoTextBox">{{processRemark}}</div>
+            {{/if}}
+            {{#if processReadTime}}
+            <p class="text-muted">
+                {{_ "task.task.processReadTime"}}: {{processReadTime}}
+            </p>
+            {{/if}}
+        </div>
+    </div>
+</template>

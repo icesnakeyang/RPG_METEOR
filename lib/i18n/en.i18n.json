@@ -1,0 +1,274 @@
+{
+  "common":{
+    "caution":"Caution",
+    "searchHolder":"Please input task name or code name to search tasks"
+  },
+  "domain": {
+    "hello": "Hey there"
+  },
+  "settings": {
+    "page_info": "Settings here",
+    "page_language": "Current language"
+  },
+  "nav": {
+    "login": "Sign in",
+    "settings": "Settings",
+    "signout": "Sign out",
+    "appeal": "Appeal square",
+    "topup": "Top up",
+    "matching": "Match Jobs",
+    "secretary": "RPG Secretary",
+    "admin": "RPG Administrator",
+    "myhonor": "My Honor",
+    "myaccount": "My Account",
+    "myprofile": "My Profile",
+    "mytask": "My Task",
+    "myrpg": "My RPG"
+  },
+  "myTask": {
+    "noTask": {
+      "pageInfo": "You have no related task, please create one to start.",
+      "createButton": "Create New Task"
+    }
+  },
+  "task": {
+    "task": {
+      "taskName": "Task Name",
+      "taskCode":"Code Name",
+      "taskDetail": "Task Detail",
+      "days": "Days",
+      "createdBy": "Created by",
+      "createdTime": "Created time",
+      "daysLeft": "Days left",
+      "subTasks": "Sub tasks",
+      "reward": "Reward",
+      "partyA": "Party A",
+      "partyB": "Party B",
+      "publishedTime": "Published time",
+      "contractedTime": "Contracted time",
+      "publisher":"Publisher",
+      "readTime":"Read time",
+      "processTime":"Process time",
+      "processReadTime":"Read process result time",
+      "unread":"Unread",
+      "status": {
+        "status": "Status",
+        "progress": "Progress",
+        "complete": "Complete",
+        "acceptance": "Acceptance",
+        "published": "Published",
+        "contracted": "Contracted",
+        "matching": "Matching",
+        "rejected":"Rejected",
+        "accepted":"Accepted",
+        "stop":"Stop",
+        "canceled":"Canceled",
+        "overdue":"Overdue"
+      },
+      "daysAfterContract":"Days after contract",
+      "daysFinished":"Actual finish days",
+      "elapsedDays": "Elapsed Days",
+      "view":"Views"
+    },
+    "create": {
+      "pageInfo": "Create a new project here",
+      "createButton": "Create"
+    },
+    "menu": {
+      "createdByMe": "Created by me",
+      "partyA": "Party A",
+      "partyB": "Party B"
+    },
+    "private": {
+      "pageInfo": "Show all tasks that I created"
+    },
+    "partyA": {
+      "pageInfo": "Show all tasks that I was party A"
+    },
+    "partyB": {
+      "pageInfo": "Show all tasks that I was party B"
+    },
+    "match": {
+      "pageInfo": "Tasks need to confirm",
+      "pageInfo2": "Process the match",
+      "pageInfo3": "Here is all the jobs need to match",
+      "agreeButton":"Agree",
+      "rejectButton":"Reject",
+      "matchLogs":"Match history",
+      "matchTo":"Match to",
+      "matchTime":"Match time",
+      "readTime":"Read time",
+      "processResult":"Process result",
+      "processTime":"Process time",
+      "rejectContent":"Reject remark"
+    },
+    "detail": {
+      "pageInfo": "Show task detail information",
+      "update": "Update",
+      "logs": "Logs",
+      "subTasks": "Sub tasks",
+      "freelancer": "Freelancer",
+      "uncomplete": "Uncomplete",
+      "complete": "Complete",
+      "delete": "Delete",
+      "parent": "Parent"
+    },
+    "update": {
+      "pageInfo": "Update Task",
+      "updateButton": "Update"
+    },
+    "logs": {
+      "pageInfo": "Task logs",
+      "newLog": "New log",
+      "logContent": "Log content",
+      "submit": "Submit",
+      "logPlaceholder":"Input new log here"
+    },
+    "subTasks": {
+      "pageInfo1": "Here you can create sub tasks.",
+      "pageInfo2": "Click the list to check the task detail.",
+      "create": "Create",
+      "titlePlaceholder": "Input new sub tasks title"
+    },
+    "publish": {
+      "pageInfo1": "Task published detail information",
+      "pageInfo2": "Publish this task",
+      "linkPublish": "Publish",
+      "linkLog": "Logs",
+      "linkComplete": "Complete",
+      "linkStop": "Stop",
+      "linkAppeal": "Appeal",
+      "linkPending":"Match",
+      "pageInfo3": "This task has not been published yet.",
+      "pageInfo4": "Click publish to publish to global freelancers.",
+      "newPublish": {
+        "pageInfo": "Publish task to freelancers",
+        "balance": "Balance",
+        "publishButton": "Publish",
+        "pageInfo2": "Sorry! You must create a task before publish!"
+      },
+      "logs":{
+        "pageInfo":"Create a new log",
+        "pageInfo2":"All logs is here",
+        "submitButton":"Submit",
+        "newButton":"New Log",
+        "totalLogs":"Total"
+      },
+      "match":{
+        "pageInfo":"Job match logs"
+      }
+    },
+    "complete":{
+      "pageInfo":"Complete the job",
+      "linkService":"Service",
+      "linkAccept":"Accept",
+      "linkReject":"Reject",
+      "linkSubmit":"Submit",
+      "pageInfoSubmit":"Submit to party A and waiting for confirm to accept the job.",
+      "description":"Description",
+      "submitButton":"Submit",
+      "pageInfoAccept":"Warning: This operation will accept this job, and give the reward to party B.",
+      "pageInfoReject":"Refuse the complete submit by party B.",
+      "rejectButton":"Reject"
+    },
+    "stop":{
+      "pageInfo":"Here you can stop and cancel this job.",
+      "linkNew":"Create New Stop",
+      "linkEdit":"Edit Stop",
+      "linkApprove":"Approve Stop",
+      "linkService":"Service",
+      "pageInfoNewStop":"Create a new stop job log. Refund means how much money will send back to party A",
+      "pageInfoApproveStop":"Approve the stop job request",
+      "refund":"Refund",
+      "description":"Description",
+      "createNewStopButton":"Create",
+      "result":"Result",
+      "reject":"Reject",
+      "agree":"Agree"
+    },
+    "appeal":{
+      "linkCreate":"Create New Appeal",
+      "pageInfo":"If you cannot check balance with the other party of this task, you can appeal the event here.",
+      "pageInfoNew":"This content will be published to all of the internet, everybody can see your dispute. Please make sure you will do this.",
+      "title":"Title",
+      "appealContent":"Content",
+      "submit":"Submit Appeal",
+      "linkRepeal":"Repeal",
+      "pageInfoRepeal":"All repeals here",
+      "pageInfoRepeal2":"Repeal this appeal",
+      "repealContent":"Description",
+      "repealTitle":"Repeal Title",
+      "submitRepeal":"Submit Repeal",
+      "linkCreateRepeal":"Create New Repeal",
+      "btAgree":"Agree",
+      "btReject":"Reject",
+      "repealReject":"Rejected",
+      "repealAgreed":"Agreed",
+      "processResult":"Result",
+      "unProcess":"Waiting for process",
+      "processTime":"Process Time"
+    }
+  },
+  "myProfile":{
+    "pageInfo":"My gogoRPG Profile",
+    "person":"Person",
+    "email":"Email",
+    "phone":"Phone",
+    "personal":{
+      "pageInfo":"My gogoRPG Profile",
+      "fullName":"Full Name",
+      "inputFullNamePlaceholder":"Please input your real name",
+      "submitButton":"Submit"
+    }
+  },
+  "myAccount":{
+    "pageInfo":"Show all of my account here",
+    "income":"Income",
+    "cost":"Cost",
+    "topUp":"Top Up",
+    "balance":"Balance",
+    "myAccountLedger":"My Account Ledger",
+    "date":"Date",
+    "amount":"Amount",
+    "type":"Type"
+  },
+  "myHonor":{
+    "pageInfo":"Check your honor here",
+    "pageInfo2":"You can obtain honor point by finish tasks.",
+    "reward":"Reward",
+    "penalty":"Penalty",
+    "balance":"Balance",
+    "date":"Date",
+    "point":"Point",
+    "mark":"Mark"
+  },
+  "loginLogs": {
+    "loginLogs": "Login logs"
+  },
+  "admin": {
+    "account": {
+      "userAccount": "User Account"
+    },
+    "settings":{
+      "settingPage":"Settings",
+      "pendingDays":"Match pending expire days",
+      "btPendingDays":"Submit"
+    },
+    "matchLogs":{
+      "matchLogs":"Job Match Logs",
+      "title":"Job",
+      "publishDate":"Published Date",
+      "amount":"Job Amount",
+      "overDate":"Expired Date"
+    }
+  },
+  "searchResult": {
+    "action": "Action",
+    "detail": "Detail"
+  },
+  "template":{
+    "button":{
+      "cancel":"Cancel"
+    }
+  }
+}

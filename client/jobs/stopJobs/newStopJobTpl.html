@@ -1,0 +1,19 @@
+<template name="newStopJobTpl">
+    <div class="container">
+        <div class="well well-sm">
+            {{_ "task.stop.pageInfoNewStop"}}
+        </div>
+
+        <div class="form-group">
+            <label>{{_ "task.stop.description"}}</label>
+            <textarea id="txtContent" class="form-control" rows="10">{{stop.remark}}</textarea>
+        </div>
+
+        <div class="form-group">
+            <label>{{_ "task.stop.refund"}}</label>
+            <input id="refund" class="form-control" value="{{stop.refund}}">
+        </div>
+
+        <button id="bt_save" class="btn btn-primary btn-block">{{_ "task.stop.createNewStopButton"}}</button>
+    </div>
+</template>

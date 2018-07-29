@@ -1,0 +1,66 @@
+<template name="userAccountDetailTpl">
+    <div class="container">
+        <div class="well well-sm text-muted">
+            {{_ "myAccount.pageInfo"}}
+        </div>
+
+        <div class="row">
+            <div class="col-xs-3">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        {{_ "myAccount.income"}}
+                    </div>
+                    <div class="panel-body">
+                        {{income}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        {{_ "myAccount.cost"}}
+                    </div>
+                    <div class="panel-body">
+                        {{cost}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        {{_ "myAccount.topUp"}}
+                    </div>
+                    <div class="panel-body">
+                        {{topUp}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        {{_ "myAccount.balance"}}
+                    </div>
+                    <div class="panel-body">
+                        {{balance}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <table class="table">
+            <caption>{{_ "myAccount.myAccountLedger"}}</caption>
+            <thead>
+            <tr>
+                <th>{{_ "myAccount.date"}}</th>
+                <th>{{_ "myAccount.amount"}}</th>
+                <th>{{_ "myAccount.type"}}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each ledgers}}
+                {{> userAccountDetailRowTpl}}
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

@@ -1,0 +1,23 @@
+<template name="appealTpl">
+    <div class="container">
+        <div class="well well-sm text-muted">
+            {{_ "task.appeal.pageInfo"}}
+        </div>
+
+        <div class="form-group">
+            <ul class="nav nav-pills">
+                {{#if isNew}}
+                    <li>
+                        <button id="btNewAppeal" class="btn btn-primary">
+                            {{_ "task.appeal.linkCreate"}}
+                        </button>
+                    </li>
+                {{/if}}
+            </ul>
+        </div>
+
+        {{#each appeals}}
+            {{> appealRowTpl}}
+        {{/each}}
+    </div>
+</template>

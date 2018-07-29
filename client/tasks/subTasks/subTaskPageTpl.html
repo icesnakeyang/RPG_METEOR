@@ -1,0 +1,27 @@
+<template name="subTaskPageTpl">
+    <div class="container">
+        <div class="well well-sm text-muted">
+            {{_ "task.subTasks.pageInfo1"}}
+            <p></p>
+            {{_ "task.subTasks.pageInfo2"}}
+        </div>
+
+        <div class="form-group">
+            <div class="input-group">
+                <input id="txtTitle" class="form-control"
+                       placeholder={{_ "task.subTasks.titlePlaceholder"}}>
+                <span id="bt_newSub" class="input-group-addon">{{_ "task.subTasks.create"}}
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="list-group">
+                {{#each subTasks}}
+                    <!--{{> subTaskPagePanelTpl}}-->
+                    {{> subTaskRowTitleTpl}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</template>

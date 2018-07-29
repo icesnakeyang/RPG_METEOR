@@ -1,0 +1,272 @@
+{
+  "common": {
+    "caution": "警告",
+    "searchHolder":"请输入任务名称或任务代号"
+  },
+  "domain": {
+    "hello": "你好"
+  },
+  "settings": {
+    "page_info": "设置页面",
+    "page_language": "当前语言"
+  },
+  "nav": {
+    "login": "登录",
+    "settings": "设置",
+    "signout": "登出",
+    "appeal": "申诉广场",
+    "topup": "充值",
+    "matching": "匹配工作",
+    "secretary": "RPG秘书",
+    "admin": "RPG管理员",
+    "myhonor": "我的荣誉值",
+    "myaccount": "我的账户",
+    "myprofile": "我的简介",
+    "mytask": "我的任务",
+    "myrpg": "我的RPG"
+  },
+  "myTask": {
+    "noTask": {
+      "pageInfo": "你还没有相关任务，你可以创建一个任务，然后开始工作。",
+      "createButton": "创建新任务"
+    }
+  },
+  "task": {
+    "task": {
+      "taskName": "任务名称",
+      "taskCode":"任务代号",
+      "taskDetail": "任务内容",
+      "days": "任务要求天数",
+      "createdBy": "创建人",
+      "createdTime": "创建时间",
+      "daysLeft": "剩余天数",
+      "subTasks": "子任务数",
+      "reward": "任务奖金",
+      "partyA": "甲方",
+      "partyB": "乙方",
+      "publishedTime": "发布时间",
+      "contractedTime": "签约时间",
+      "publisher": "发布人",
+      "readTime": "阅读时间",
+      "unread": "未阅读",
+      "processTime": "处理时间",
+      "processReadTime": "查看处理结果时间",
+      "elapsedDays": "任务进行时间",
+      "view":"浏览次数",
+      "status": {
+        "status": "当前状态",
+        "progress": "进行中",
+        "complete": "已完成",
+        "acceptance": "已验收",
+        "published": "已发布",
+        "contracted": "已分配",
+        "matching": "等待分配",
+        "rejected": "已拒绝",
+        "accepted": "已同意",
+        "stop":"终止",
+        "canceled":"已终止",
+        "overdue":"已过期"
+      },
+      "daysAfterContract":"承接任务至今的天数",
+      "daysFinished":"实际完成天数"
+    },
+    "create": {
+      "pageInfo": "创建一个新任务",
+      "createButton": "创建"
+    },
+    "menu": {
+      "createdByMe": "我的私有任务",
+      "partyA": "我是甲方",
+      "partyB": "我是乙方",
+      "pending": "系统分配任务"
+    },
+    "private": {
+      "pageInfo": "我的私有任务"
+    },
+    "partyA": {
+      "pageInfo": "所有我是甲方的任务"
+    },
+    "partyB": {
+      "pageInfo": "所有我是乙方的任务"
+    },
+    "pending": {
+      "pageInfo": "等待分配的任务",
+      "pageInfo2": "处理分配给我的任务",
+      "pageInfo3": "等待分配给乙方的任务",
+      "agreeButton": "同意",
+      "rejectButton": "拒绝",
+      "pendingLogs":"任务分配历史",
+      "assignTo":"分配用户",
+      "assignTime":"分配任务时间",
+      "readTime":"对方查看时间",
+      "processResult":"对方处理结果",
+      "processTime":"对方处理时间",
+      "rejectContent":"请说明拒绝原因"
+    },
+    "detail": {
+      "pageInfo": "任务详情",
+      "update": "修改",
+      "logs": "日志",
+      "subTasks": "子任务",
+      "freelancer": "威客",
+      "uncomplete": "未完成",
+      "complete": "完成",
+      "delete": "删除",
+      "parent": "父任务"
+    },
+    "update": {
+      "pageInfo": "修改任务",
+      "updateButton": "修改"
+    },
+    "logs": {
+      "pageInfo": "任务日志",
+      "newLog": "新增",
+      "logContent": "日志内容",
+      "submit": "提交"
+    },
+    "subTasks": {
+      "pageInfo1": "创建当前任务的子任务",
+      "pageInfo2": "点击子任务可进入子任务详细页面",
+      "create": "创建",
+      "titlePlaceholder": "输入子任务名称"
+    },
+    "publish": {
+      "pageInfo1": "发布任务详情",
+      "pageInfo2": "发布该任务",
+      "linkPublish": "发布",
+      "linkLog": "任务日志",
+      "linkComplete": "完成日志",
+      "linkStop": "终止日志",
+      "linkAppeal": "申诉事件",
+      "linkPending":"匹配日志",
+      "pageInfo3": "该任务还未被发布",
+      "pageInfo4": "你可以发布该任务让全球专业威客为你服务",
+      "newPublish": {
+        "pageInfo": "发布任务，让全球威客为你服务",
+        "balance": "我的余额",
+        "publishButton": "发布",
+        "pageInfo2": "抱歉！发布任务前你必须先创建一条私有任务"
+      },
+      "logs": {
+        "pageInfo": "创建一个新的任务日志",
+        "pageInfo2": "任务日志",
+        "submitButton": "提交",
+        "newButton": "新日志",
+        "totalLogs": "日志总数"
+      },
+      "pending":{
+        "pageInfo":"任务分配日志"
+      }
+    },
+    "complete": {
+      "pageInfo": "完成任务日志",
+      "linkService": "联系客服",
+      "linkAccept": "同意完成",
+      "linkReject": "拒绝完成",
+      "linkSubmit": "申请完成",
+      "pageInfoSubmit": "提交完成任务申请，并等待对方确认。",
+      "description": "完成描述",
+      "submitButton": "提交",
+      "pageInfoAccept": "警告：本操作会确认完成任务，并将任务荣誉值奖励给乙方，且本操作不可取消。",
+      "pageInfoReject": "拒绝任务完成申请.",
+      "rejectButton": "拒绝"
+    },
+    "stop": {
+      "pageInfo": "终止任务",
+      "linkNew":"申请终止任务",
+      "linkEdit":"编辑申请",
+      "linkApprove":"审核终止任务申请",
+      "linkService":"联系客服",
+      "pageInfoNewStop": "创建一条新的终止任务申请。注意，退款是指乙方愿意退还给甲方的任务佣金数。",
+      "pageInfoApproveStop":"处理对方提出的终止任务申请",
+      "refund": "退款",
+      "description": "终止申请描述",
+      "createNewStopButton": "创建终止任务申请",
+      "result": "处理结果",
+      "reject": "拒绝",
+      "agree": "同意"
+    },
+    "appeal": {
+      "linkCreate": "创建申诉事件",
+      "pageInfo": "申诉事件",
+      "pageInfoNew": "申诉内容会在互联网上进行公开，任何人都可阅读并进行评判，你确定你要这么做吗？",
+      "title": "申诉主题",
+      "appealContent": "申诉内容",
+      "submit": "发布申诉",
+      "linkRepeal": "撤销申请",
+      "pageInfoRepeal": "撤销申诉",
+      "repealContent":"撤销理由说明",
+      "repealTitle":"撤销申请标题",
+      "submitRepeal":"提交撤销申请",
+      "linkCreateRepeal":"申请撤诉",
+      "btAgree":"同意",
+      "btReject":"拒绝",
+      "repealReject":"已拒绝",
+      "repealAgreed":"已同意",
+      "processResult":"处理结果",
+      "unProcess":"未处理",
+      "processTime":"处理时间"
+    }
+  },
+  "myProfile": {
+    "pageInfo": "我的信息",
+    "person": "实名认证",
+    "email": "邮箱认证",
+    "phone": "手机认证",
+    "personal": {
+      "pageInfo": "我的实名信息",
+      "fullName": "真实姓名",
+      "inputFullNamePlaceholder": "请输入你的真实姓名",
+      "submitButton": "提交"
+    }
+  },
+  "myAccount": {
+    "pageInfo": "我的账户信息",
+    "income": "任务收入",
+    "cost": "支出",
+    "topUp": "充值",
+    "balance": "余额",
+    "myAccountLedger": "我的账户明细",
+    "date": "日期",
+    "amount": "金额",
+    "type": "类别"
+  },
+  "myHonor":{
+    "pageInfo":"查看我的荣誉值",
+    "pageInfo2":"完成任务并通过甲方验收即可获得荣誉值",
+    "reward":"获得荣誉值",
+    "penalty":"荣誉值损失",
+    "balance":"当前荣誉值",
+    "date":"日期",
+    "point":"荣誉值",
+    "mark":"备注"
+  },
+  "loginLogs": {
+    "loginLogs": "用户登录日志"
+  },
+  "admin": {
+    "account": {
+      "userAccount": "用户账户管理"
+    },
+    "settings":{
+      "settingPage":"设置",
+      "pendingDays":"匹配有效天数"
+    },
+    "pendingLogs":{
+      "pendingLogs":"任务匹配日志",
+        "title":"任务标题",
+        "publishDate":"发布日期",
+        "amount":"任务金额",
+        "overDate":"到期日期"
+    }
+  },
+  "searchResult": {
+    "action": "操作",
+    "detail": "详情"
+  },
+  "template":{
+    "button":{
+      "cancel":"取消"
+    }
+  }
+}

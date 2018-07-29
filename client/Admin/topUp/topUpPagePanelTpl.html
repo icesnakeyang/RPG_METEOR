@@ -1,0 +1,20 @@
+<template name="topUpPagePanelTpl">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            {{userInfo.fullName}}
+        </div>
+        <div class="panel-body">
+            <p class="text-muted">
+                Balance: {{balance}}
+            </p>
+
+        </div>
+        <div class="panel-footer">
+            <div class="form-group">
+                <label>Top up amount:</label>
+            </div>
+            <input id="txtAmount" class="form-control">
+        </div>
+        <button id="bt_topUp" class="btn btn-primary btn-block">Top up</button>
+    </div>
+</template>

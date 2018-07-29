@@ -1,0 +1,22 @@
+<template name="rejectModalTpl">
+    <div class="modal fade" id="modal1">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">{{_ "task.match.rejectContent"}}</h4>
+                </div>
+
+                <div class="modal-body">
+                    <textarea id="txtRejectContent" rows="10" style="width: 100%;"></textarea>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="confirmReject">{{_ "task.match.rejectButton"}}</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{_ "template.button.cancel"}}</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,16 @@
+<template name="adminPageRowTpl">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            {{this.userInfo.fullName}}
+        </div>
+
+        <div class="panel-body">
+            <p class="text-muted">User Id: {{userId}}</p>
+            <p class="text-muted">Email: {{this.userInfo.email}}</p>
+        </div>
+
+        <div class="panel-footer">
+            <button id="bt_disable" class="btn btn-danger btn-block">Disable</button>
+        </div>
+    </div>
+</template>

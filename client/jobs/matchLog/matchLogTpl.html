@@ -1,0 +1,12 @@
+<template name="matchLogTpl">
+    <div class="container">
+        <div class="well well-sm text-muted">
+            {{_ "task.publish.match.pageInfo"}}
+        </div>
+
+        <!--log list-->
+        {{#each logs}}
+            {{> matchLogRowTpl}}
+        {{/each}}
+    </div>
+</template>

@@ -1,0 +1,71 @@
+JobsAppeal
+申诉任务
+
+申诉任务是指用户可以在RPG平台上写一篇文章来详细对甲乙双方的纠纷进行描述、吐槽、争辩、吵架等
+这其实是个BBS系统，甲乙双方都可以任意发起申诉，然后双方都可以在下面回复。
+一个任务一旦被发起申诉就处于申诉事件状态，除非双方达成和解，撤销申诉，否则该任务不能再次被申诉。
+申诉任务会被扣除相应的荣誉值，一般对等于任务佣金，但系统会设定一个最小扣除荣誉值，即如果任务金额小于该荣誉值，则按该值扣除。
+每个用户的个人数据里有个申诉事件键值，记录用户当前正在被申诉的任务数量。被申诉一次+1，撤诉后-1
+有申诉事件的用户不能承接新任务，即系统可能不会分配任务给这类用户。
+申诉记录是完全公开的，任何人都可以见。
+
+撤销申诉是JobsRepeal集合里记录。
+撤销申诉记录是私密的，不对外公开。
+
+            数据格式：
+
+            JobsAppeal={
+                _id:            (String)    jobsStopId，保存时由MongoDB自动生成,
+                jobId:          (String)    外包任务的Id
+                createdTime:    (DateTime)  日志的创建时间
+                createdUserId：  (String)    创建日志的用户Id
+                partyAId
+                partyBId
+                title:                      申诉标题
+                content:         (String)    申诉内容
+
+                readTime:   对方阅读时间
+
+                views：          (Number)    被公众阅读次数
+                lastReadTime:   最后一次被公共用户阅读的时间
+
+                repeal: true    撤销申诉时设置
+                repealTime:
+            }
+
+创建身申诉
+    Meteor.call('JobsAppeal.insertNew',data)
+        jobId
+        createdUserId
+        title
+        content
+
+        1、JobsAppeal.insert(jobId, createdUserId, title, content)
+
+        2、Job.update set appeal=true
+
+        3、冻结甲方和乙方的account，在甲方和乙方的UserData上增加
+         appeal{
+            block + job.reward  //申诉要冻结job的reward
+            appealing ++    // 每申诉一次，appealing +1
+        }
+
+        4、扣除甲方和乙方的honor
+        在UserData集合里update
+        userHonor:{
+                income: 用户总共获得的荣誉值,
+                out:    支出的荣誉值，交换，处罚，申诉等 - job.reward
+                balance:    用户当前的荣誉值点数。- job.reward
+            }
+
+跟帖
+    所有用户，包括甲方和乙方，都可以对该申诉内容进行跟帖回复。
+    甲方用户或乙方用户回帖将显示为甲方用户，或乙方用户+fullName。其他用户显示fullName
+
+    跟帖数据结构：
+    appealPost{
+        appealId
+        createdUserId
+        createdTime
+        content
+    }

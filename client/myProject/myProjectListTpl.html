@@ -1,0 +1,18 @@
+<template name="myProjectListTpl">
+    <div class="container">
+        {{> headerWellTpl "task.private.pageInfo"}}
+        {{> tabTpl initData}}
+
+        {{#if myTask}}
+            {{> myTasksTpl}}
+        {{else}}
+            {{#if myPartyA}}
+                {{> myPartyAJobsTpl}}
+            {{else}}
+                {{#if myPartyB}}
+                    {{> myPartyBJobsTpl}}
+                {{/if}}
+            {{/if}}
+        {{/if}}
+    </div>
+</template>

@@ -1,0 +1,124 @@
+
+Meteor.publish('publishedTasks', function () {
+    /**
+     * 1、如果未登录用户，所有未分配，未过期任务
+     * 2、如果Admin，所有任务
+     * 3、如果已登录，所有甲方或乙方任务，以及1未登录用户可看到的任务。
+     */
+
+    if (!Meteor.userId()) {
+        return PublishedTasks.find({
+            pendingOverDue: {$exists: false},
+            assignedLogId: {$exists: false}
+        });
+    }
+
+    if (rpgCommon.isAdmin(Meteor.userId())) {
+        return PublishedTasks.find();
+    }
+
+    var pubs= PublishedTasks.find({
+        $or: [
+            {
+                publishUserId: Meteor.userId(),
+                pendingOverDue: {$exists: false}
+            },
+            {
+                processUserId: Meteor.userId(),
+                pendingOverDue: {$exists: false}
+            },
+            {
+                pendingOverDue: {$exists: false},
+                assignedLogId: {$exists: false}
+            }
+        ]
+    });
+    return pubs;
+});
+
+Meteor.publish('allPublishedTasks', function () {
+        return PublishedTasks.find();
+});
+
+Meteor.publish('userInfos', function (limit) {
+    if(!limit){
+        limit=100;
+    }
+    return UserInfos.find({},{
+        sort:{createdTime:-1},
+        limit:limit
+    });
+});
+
+
+
+Meteor.publish('taskLogs', function () {
+    return TaskLogs.find();
+});
+
+//
+Meteor.publishComposite('tasksMap', {
+    find: function () {
+        return Tasks.find();
+    },
+    children: [{
+        find: function (task) {
+            return UserInfos.find({
+                userId: task.createdUserId,
+                overduedTime: {$exists: false}
+            })
+        }
+    }]
+});
+
+Meteor.publish('publishedTaskLogs', function () {
+    return PublishedTaskLogs.find();
+});
+
+Meteor.publish('users', function () {
+    return Meteor.users.find();
+});
+
+Meteor.publish('userTypes', function () {
+    return UserTypes.find();
+});
+
+Meteor.publish('publishedTaskAssignLog', function () {
+    return PublishedTaskAssignLog.find();
+});
+
+Meteor.publish('cashBook', function () {
+    return CashBook.find();
+});
+
+Meteor.publish('completeLogs', function () {
+    return CompleteLogs.find();
+});
+
+Meteor.publish('honorLogs', function () {
+    return HonorLogs.find();
+});
+
+Meteor.publish('stopLogs', function () {
+    return StopLogs.find();
+});
+
+Meteor.publish('userData', function () {
+    return UserData.find();
+});
+
+Meteor.publish('appeals', function () {
+    return Appeals.find();
+});
+
+Meteor.publish('repeals', function () {
+    return Repeals.find();
+});
+
+Meteor.publish('loginLogs', function () {
+    return LoginLogs.find();
+});
+
+Meteor.publish('settings', function () {
+    return Settings.find();
+});

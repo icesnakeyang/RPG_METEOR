@@ -1,0 +1,11 @@
+TasksLog
+私有任务的日志，主要是让用户自己可以记录任务的进行过程。
+
+tasksLog:
+{
+    _id
+    createdUserId   创建日志的用户Id
+    createdTime     创建时间
+    taskId          私有任务Id
+    content         日志内容
+}

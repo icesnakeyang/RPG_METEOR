@@ -1,0 +1,21 @@
+<template name="jobMatchRowTpl">
+    <div class="panel panel-info">
+        <div id="title" class="panel-heading">
+            <a id="title" href="">{{this.title}}</a>
+        </div>
+        <div class="panel-body">
+            <p class="text-muted">
+                Published by: {{partyA.userInfo.fullName}}
+            </p>
+            <p class="text-muted">
+                Published time: {{pubTime}}
+            </p>
+            <p class="text-muted">
+                reward: {{reward}}
+            </p>
+            <p class="text-muted">
+                days: {{days}}
+            </p>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,13 @@
+<template name="publicAppealBoardRowTpl">
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <a id="linkTitle" href="">{{title}}</a>
+        </div>
+        <div class="panel-body">
+            <p class="text-muted">{{_ "task.task.createdBy"}}: {{createUser.userInfo.fullName}}</p>
+            <p class="text-muted">{{_ "task.task.createdTime"}}: {{createdTime}}</p>
+            <p class="text-muted">{{_ "task.task.taskCode"}}: {{codeName}}</p>
+            <p class="text-muted">{{_ "task.task.taskName"}}: {{jobTitle}}</p>
+        </div>
+    </div>
+</template>

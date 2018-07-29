@@ -1,0 +1,23 @@
+UserHonor
+记录用户荣誉值流水的集合
+
+UserHonor:{
+    userId
+    createdUserId
+    createdTime
+    point
+    type    荣誉值变更的原因类型
+    jobId   关联的任务
+
+}
+
+在UserData里保存的值
+userHonor:{
+        income: 用户总共获得的荣誉值,
+        out:    支出的荣誉值，交换，处罚，申诉等
+        balance:    用户当前的荣誉值点数。
+    }
+
+type
+    Acceptance
+    Appeal

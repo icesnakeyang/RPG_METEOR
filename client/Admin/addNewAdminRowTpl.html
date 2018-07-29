@@ -1,0 +1,14 @@
+<template name="addNewAdminRowTpl">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <a id="userId" href="#">{{userInfo.fullName}}</a>
+        </div>
+        <div class="panel-body">
+            <p class="text-muted">User ID: <span>{{userId}}</span></p>
+            <p class="text-muted">Email: <span>{{userInfo.email}}</span></p>
+        </div>
+        <div class="panel-footer">
+            <button id="bt_Set" class="btn btn-primary btn-block">Set</button>
+        </div>
+    </div>
+</template>

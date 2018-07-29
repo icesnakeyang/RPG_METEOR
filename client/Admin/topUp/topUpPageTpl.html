@@ -1,0 +1,18 @@
+<template name="topUpPageTpl">
+    <div class="container">
+        <div class="well well-sm text-muted">
+            Top up money to user's account
+        </div>
+
+        <div class="form-group">
+            <div class="input-group">
+                <input id="user_id" type="text" class="form-control" placeholder="Input user name"
+                       aria-describedby="basic-addon2">
+                <span class="input-group-addon" id="bt_search">Search</span>
+            </div>
+        </div>
+        {{#if user}}
+            {{> topUpPagePanelTpl user}}
+        {{/if}}
+    </div>
+</template>

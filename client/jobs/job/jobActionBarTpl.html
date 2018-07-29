@@ -1,0 +1,68 @@
+<template name="JobActionBarTpl">
+    <!--menus-->
+    <div class="form-group">
+        <ul class="nav nav-pills" role="tablist">
+            {{#if this}}
+                {{#unless isGuest}}
+                    <li>
+                        <a id="btLog" href="">
+                            {{_ "task.publish.linkLog"}}
+                            ({{totalLog}})
+                            {{#if newLog}}
+                                <span class="badge gogoBadge">{{newLog}}</span>
+                            {{/if}}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a id="btComplete" href="">
+                            {{_ "task.publish.linkComplete"}}
+                            ({{totalComplete}})
+                            {{#if newComplete}}
+                                <span class="badge gogoBadge">
+                                    {{newComplete}}
+                                </span>
+                            {{/if}}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a id="btStop" href="">
+                            {{_ "task.publish.linkStop"}}
+                            ({{totalStop}})
+                            {{#if newStop}}
+                                <span class="badge gogoBadge">{{newStop}}</span>
+                            {{/if}}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a id="btAppeal" href="">
+                            {{_ "task.publish.linkAppeal"}}
+                            ({{totalAppeal}})
+                            {{#if newAppeal}}
+                                <span class="badge gogoBadge">{{newAppeal}}</span>
+                            {{/if}}
+                        </a>
+                    </li>
+
+                    {{#if isPartyA}}
+                        {{#if totalMatch}}
+                            <li>
+                                <a id="btMatch" href="">
+                                    {{_ "task.publish.linkPending"}}
+                                    ({{totalMatch}})
+                                </a>
+                            </li>
+                        {{/if}}
+                    {{/if}}
+                {{/unless}}
+            {{else}}
+                <li>
+                    <a id="linkNewPublish" href="" class="btn btn-primary btn-sm">{{_
+                            "task.publish.linkPublish"}}</a>
+                </li>
+            {{/if}}
+        </ul>
+    </div>
+</template>

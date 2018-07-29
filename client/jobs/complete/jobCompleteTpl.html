@@ -1,0 +1,28 @@
+<template name="jobCompleteTpl">
+    <div class="container">
+        <div class="well well-sm text-muted">
+            {{_ "task.complete.pageInfo"}}
+        </div>
+        <div class="form-group">
+            <ul class="nav nav-pills" role="tablist">
+                {{#if isAccept}}
+                    <li><a id="linkService" href="">{{_ "task.complete.linkService"}}</a></li>
+                {{else}}
+                    {{#if isPartyA}}
+                        <li><a id="linkAccept" href="">{{_ "task.complete.linkAccept"}}</a></li>
+                        {{#if isComplete}}
+                            <li><a id="linkReject" href="">{{_ "task.complete.linkReject"}}</a></li>
+                        {{/if}}
+                    {{else}}
+                        {{#if isPartyB}}
+                            <li><a id="linkSubmit" href="">{{_ "task.complete.linkSubmit"}}</a></li>
+                        {{/if}}
+                    {{/if}}
+                {{/if}}
+            </ul>
+        </div>
+        {{#each logs}}
+            {{> jobCompleteRowTpl}}
+        {{/each}}
+    </div>
+</template>

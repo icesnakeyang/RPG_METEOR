@@ -1,0 +1,27 @@
+<template name="jobTpl">
+    <div class="container">
+        {{#if job}}
+            <div class="well well-sm text-muted">
+                {{_ "task.publish.pageInfo1"}}
+            </div>
+        {{else}}
+            <div class="well well-sm text-muted">
+                {{_ "task.publish.pageInfo2"}}
+            </div>
+        {{/if}}
+
+        {{> JobActionBarTpl job}}
+
+        <!--published task info-->
+        {{#if job}}
+            {{> jobPanelTpl job}}
+        {{else}}
+            <div class="jumbotron">
+                <p class="text-muted">{{_ "task.publish.pageInfo3"}}
+                    <br>
+                    {{_ "task.publish.pageInfo4"}}
+                </p>
+            </div>
+        {{/if}}
+    </div>
+</template>

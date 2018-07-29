@@ -1,0 +1,12 @@
+<template name="layoutTpl">
+    <div class="wrapper">
+        {{> navTpl}}
+        <div class="gogobody">
+            {{#if isLogin}}
+                {{> actionBarTpl}}
+            {{/if}}
+            {{> yield}}
+        </div>
+    </div>
+    {{> footer}}
+</template>

@@ -1,0 +1,86 @@
+<template name="navTpl">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="/home">
+                    <img src="/Images/gogoYang.png" width="20px">
+                </a>
+                <a class="navbar-brand" href="/rpg">RPG</a>
+                <a class="navbar-brand" href="/myProfile">
+                    {{#if loginUser.userInfo.fullName}}
+                        {{loginUser.userInfo.fullName}}
+                    {{else}}
+                        {{email}}
+                    {{/if}}
+                </a>
+                {{#if isLogin}}
+                    <a class="navbar-brand" href="/newTask">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </a>
+                {{/if}}
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    {{#if isLogin}}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                               role="button" aria-haspopup="true"
+                               aria-expanded="true">
+                                {{_ "nav.myrpg"}}<span class="caret"></span>
+                                {{#if newLogs}}
+                                    <span class="badge gogoBadge">{{newLogs}}</span>
+                                {{/if}}
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a id="linkMyProject" href="">{{_ "nav.mytask"}}</a></li>
+                                <li><a href="/myProfile">{{_ "nav.myprofile"}}</a></li>
+                                <li><a href="/myAccountPage">{{_ "nav.myaccount"}}</a></li>
+                                <li><a href="/honorPage">{{_ "nav.myhonor"}}</a></li>
+                            </ul>
+                        </li>
+
+                        {{#if isAdmin}}
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                   role="button" aria-haspopup="true"
+                                   aria-expanded="true">{{_ "nav.admin"}}<span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/adminPage">{{_ "nav.admin"}}</a></li>
+                                    <li><a href="/manageSecretaryPage">{{_ "nav.secretary"}}</a></li>
+                                    <li><a href="/loginLogs">{{_ "loginLogs.loginLogs"}}</a></li>
+                                    <li><a href="/accountPage">{{_ "admin.account.userAccount"}}</a></li>
+                                    <li><a href="/adminMatchLogs">{{_ "admin.matchLogs.matchLogs"}}</a></li>
+                                    <li><a href="/settings">{{_ "admin.settings.settingPage"}}</a></li>
+                                </ul>
+                            </li>
+                        {{/if}}
+
+                        {{#if rpgSecretary}}
+                            <li><a href="/jobMatchList">{{_ "nav.matching"}}</a></li>
+                            <li><a href="/topUpPage">{{_ "nav.topup"}}</a></li>
+                        {{/if}}
+
+                        <li><a href="/publicAppealBoard">{{_ "nav.appeal"}}</a></li>
+                        <li><a id="logout" href="">{{_ "nav.signout"}}</a></li>
+
+                    {{else}}
+                        <li><a href="/login">{{_ "nav.login"}}</a></li>
+                    {{/if}}
+                    <li><a href="/settingsPage">{{_ "nav.settings"}}</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</template>

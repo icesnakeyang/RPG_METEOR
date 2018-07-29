@@ -1,0 +1,54 @@
+<template name="stopJobRowTpl">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            {{creator.userInfo.fullName}}
+        </div>
+        <div class="panel-body">
+            <p class="text-muted">
+                {{_ "task.task.createdTime"}}: {{createdTime}}
+            </p>
+            <p class="text-muted">
+                {{_ "task.stop.refund"}}: {{this.refund}}
+            </p>
+            <p class="gogoTextBox text-muted">
+                {{this.remark}}
+            </p>
+        <p class="text-muted">
+            {{_ "task.task.readTime"}}:
+            {{#if readTime}}
+                {{readTime}}
+            {{else}}
+                <div class="label label-info">{{_ "task.task.unread"}}</div>
+            {{/if}}
+            </p>
+            {{#if isProcessed}}
+            <p class="text-muted">
+                {{_ "task.stop.result"}}:{{this.processResult}}
+                {{#if this.processResult}}
+                    <div class="label label-success">{{_ "task.task.status.accepted"}}</div>
+                {{else}}
+                    <div class="label label-warning">{{_ "task.task.status.rejected"}}</div>
+                {{/if}}
+                </p>
+                <p class="text-muted">
+                    {{_ "task.task.processTime"}}: {{processTime}}
+                </p>
+            {{/if}}
+
+            {{#if this.processTime}}
+                <p class="gogoTextBox text-muted">
+                    {{this.processRemark}}
+                </p>
+
+            <p class="text-muted">
+                {{_ "task.task.processReadTime"}}:
+                {{#if processReadTime}}
+                    {{processReadTime}}
+                {{else}}
+                    <div class="label label-info">{{_ "task.task.unread"}}</div>
+                {{/if}}
+                </p>
+            {{/if}}
+        </div>
+    </div>
+</template>

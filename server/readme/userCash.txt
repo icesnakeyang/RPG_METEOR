@@ -1,0 +1,46 @@
+UserCash
+用户的现金账户数据集合
+
+userCash{
+    userId: 账户用户Id（账户的用户Id）
+    cashBook:{
+        amount: 金额，+收入，-支出（必填）
+        type:   该账户变更操作类型（必填）
+        其他需要的键值
+    }
+    createdTime:    操作时间（自动）
+    createdUserId:  操作用户Id（必填，当前登录用户）
+}
+
+ 统一使用Meteor.call('UserCash.addAmount',param)方法来新增一条记录
+    param={
+        userId    变更的用户Id
+        cashBook{
+            amount  变更金额，+收入，-支出
+            type
+        }
+        createdUserId   操作用户Id
+    }
+    调用该方法新增Cash记录后，自动刷新UserData的account.balance
+
+type为枚举值:
+    充值：TopUp
+    发布任务：PublishOut
+    接受任务：AgreeJob
+    任务匹配失败：MatchOverDue
+    任务终止：StopRefund
+
+其他可能的键值
+    发布任务
+        jobId: 发布的任务Id
+
+    接受任务
+        jobId：接受的任务Id
+
+    任务匹配失败
+        matchId:    哪条match记录过期
+        jobId:
+
+    任务终止
+        jobId
+        stopId  终止任务日志Id
